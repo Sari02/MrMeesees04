@@ -38,6 +38,38 @@ function setup(){
 
     platultima = new Plataforma(1720,180,150,20) ;
 
+    s1 = new Sierra(0,140,40,PI/2);
+
+    s2 = new Sierra(0,240,40,PI/2);
+
+    s3 = new Sierra(0,340,40,PI/2);
+
+    s4 = new Sierra(0,440,40,PI/2);
+
+
+
+
+    s5 = new Sierra(80,850,40,PI/2);
+
+    s6 = new Sierra(180,850,40,PI/2);
+
+    s7 = new Sierra(280,850,40,PI/2);
+
+
+
+
+    s8 = new Sierra(590,850,40,PI/2);
+
+    s9 = new Sierra(720,850,40,PI/2);
+
+    s10 = new Sierra(850,625,40,PI/2);
+
+    s11 = new Sierra(850,725,40,PI/2);
+
+
+
+    smovil = new Sierra(720,350,40,PI/2)
+
    
     Matter.Runner.run(engine);
 
@@ -91,9 +123,33 @@ function draw(){
     platultima.display();
 
     floor.display();
+
+    s1.display();
+
+    s2.display();
+
+    s3.display();
+
+    s4.display();
+
+    s5.display();
+
+    s6.display();
+
+    s7.display();
+
+    s8.display();
+
+    s9.display();
+
+    s10.display();
+
+    s11.display();
+
+    smovil.display();
     
     //console.log(meeseeks.position.x);
-    //console.log(meeseeks.velocity);
+    //console.log(meeseeks.getVelocityX);
  
 }
 

@@ -3,7 +3,8 @@ class Meeseeks {
       var options = {
         //'density':1.0,
         'friction': 1.0,
-        'restitution' : 0.0
+        'restitution' : 0.0,
+        //'velocity' : 1.0
         //collisionFilter: {
           //group: 1
       //}
@@ -31,9 +32,13 @@ class Meeseeks {
       //A
       if (keyIsDown(65)){
           var working = willCOllide(pos);
+          var reStart = willDie(pos);
           if(working == true){
             console.log("colliding");
-          }else {
+          }else if(reStart == true){
+            pos.x = 140;
+            pos.y = 100;
+          }else{
           pos.x = pos.x - move;
           }
        }
@@ -42,6 +47,9 @@ class Meeseeks {
         var working = willCOllide(pos);
         if(working == true){
           console.log("colliding");
+        }else if(reStart == true){
+          pos.x = 140;
+          pos.y = 100;
         }else {
           pos.x = pos.x + move;
         }
@@ -52,6 +60,9 @@ class Meeseeks {
         var working = willCOllide(pos);
         if(working == true){
           console.log("colliding");
+        }else if(reStart == true){
+          pos.x = 140;
+          pos.y = 100;
         }else{
           pos.y = pos.y - move;
         }
@@ -62,6 +73,9 @@ class Meeseeks {
         var working = willCOllide(pos);
         if(working == true){
           console.log("colliding");
+        }else if(reStart == true){
+          pos.x = 140;
+          pos.y = 100;
         }else{
           pos.y = pos.y + move;
         }
@@ -107,6 +121,22 @@ class Meeseeks {
               && plats[i][0] - meeseksposition.x < plats[i][2]/2 + 50/2
               && meeseksposition.y - plats[i][1] < plats[i][3]/2 + 50/2
               && plats[i][1] - plats[i][1] < plats[i][3]/2 + 50/2) {
+              
+              return true;
+            }
+            // else {
+            //   return false;
+            // }
+    }
+  }
+
+  function willDie(meeseksposition){
+    var certaindeath = [[0,140,40,40],[0,340,40,40],[0,440,40,40],[80,850,40,40],[180,850,40,40],[280,850,40,40],[590,850,40,40],[720,850,40,40],[850,625,40,40],[850,725,40,40],[720,350,40,40]];
+    for ( var i = 0; i < certaindeath.length; i++){
+      if (meeseksposition.x - certaindeath[i][0] < certaindeath[i][2]/2 + 50/2
+              && certaindeath[i][0] - meeseksposition.x < certaindeath[i][2]/2 + 50/2
+              && meeseksposition.y - certaindeath[i][1] < certaindeath[i][3]/2 + 50/2
+              && certaindeath[i][1] - certaindeath[i][1] < certaindeath[i][3]/2 + 50/2) {
               
               return true;
             }
