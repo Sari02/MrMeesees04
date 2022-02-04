@@ -25,6 +25,12 @@ class Meeseeks {
 
     display(){
       var pos = this.body.position;
+      this.body.inertia = 1;
+      //this.body.speed = 1;
+      //console.log(this.body.velocity);
+      //console.log(this.body.speed);
+      //console.log(this.body.acceleration);
+      //console.log(this.body.inertia);
       var move = 1;
       //pos.x = mouseX;
       //pos.y = mouseY;
@@ -38,6 +44,9 @@ class Meeseeks {
           }else if(reStart == true){
             pos.x = 140;
             pos.y = 100;
+            //console.log(this.body.velocity);
+            //this.body.velocity = 0;
+            console.log(this.body.velocity);
           }else{
           pos.x = pos.x - move;
           }
@@ -50,6 +59,9 @@ class Meeseeks {
         }else if(reStart == true){
           pos.x = 140;
           pos.y = 100;
+          // console.log(this.body.velocity);
+          // this.body.velocity = 0;
+          console.log(this.body.velocity);
         }else {
           pos.x = pos.x + move;
         }
@@ -63,6 +75,9 @@ class Meeseeks {
         }else if(reStart == true){
           pos.x = 140;
           pos.y = 100;
+          // console.log(this.body.velocity);
+          // this.body.velocity = 0;
+          console.log(this.body.velocity);
         }else{
           pos.y = pos.y - move;
         }
@@ -76,6 +91,9 @@ class Meeseeks {
         }else if(reStart == true){
           pos.x = 140;
           pos.y = 100;
+          // console.log(this.body.velocity);
+          // this.body.velocity = 0;
+          console.log(this.body.velocity);
         }else{
           pos.y = pos.y + move;
         }
